@@ -30,9 +30,8 @@ function SearchCountry({ searchCountry, undo }) {
         search
         selection
         options={countries}
-        
       />
-      <Button circular icon="undo" onClick={undo} />
+      <Button  icon="undo" onClick={undo} />
     </Container>
   );
 }
