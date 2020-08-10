@@ -3,7 +3,7 @@ import { Dropdown, Container, Dimmer, Loader, Button } from "semantic-ui-react";
 import "./SearchCountry.css";
 import { getCountriesInfoAPI } from "../../service/disease_shAPI";
 
-function SearchCountry({ searchCountry, undo }) {
+function SearchCountry({ searchCountry, undo, name }) {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ function SearchCountry({ searchCountry, undo }) {
         search
         selection
         options={countries}
+        value= {name}
       />
       <Button  icon="undo" onClick={undo} />
     </Container>
