@@ -19,18 +19,22 @@ function Home() {
   }, [setCountries]);
 
   const onCountryChange = async (e, { value }) => {
-    e.preventDefault();
-    setCountries(await getCountryInfoAPI(value));
+    if(value){
+      setCountries(await getCountryInfoAPI(value));
+    }
   };
 
-  //console.log(countryName);
+  const undoInfo = async (e) => {
+    e.preventDefault()
+    setCountries(await getAllCountriesAPI());
+  };
   //console.log(countries)
 
   return (
     <div className="home">
       <Header></Header>
       <h1 className="home__title">Covid-19 Tracker</h1>
-      <SearchCountry searchCountry={onCountryChange}></SearchCountry>
+      <SearchCountry searchCountry={onCountryChange} undo={undoInfo}></SearchCountry>
       <HeadingCard countries={countries}></HeadingCard>
     </div>
   );
