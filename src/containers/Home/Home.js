@@ -7,11 +7,12 @@ import {
   getAllCountriesAPI,
   getCountryInfoAPI,
 } from "../../service/disease_shAPI";
-import BarGraph from "../../components/Diagram/BarGraph/BarGraph";
+import PieChart from "../../components/Diagram/PieChart/PieChart";
+import LatestNews from "../LatestNews/LatestNews";
 
 function Home() {
   const [countries, setCountries] = useState({});
-  const [countryName, setCountryName] = useState('worldwide');
+  const [countryName, setCountryName] = useState("worldwide");
 
   useEffect(() => {
     const getAllInfo = async () => {
@@ -43,8 +44,15 @@ function Home() {
         undo={undoInfo}
         name={countryName}
       />
-      <HeadingCard countries={countries} />
-      <BarGraph  data={countries} name={countryName}/>
+      <div className="home__layout">
+        <div className="home__layoutLeft">
+          <HeadingCard countries={countries} />
+          <PieChart data={countries} name={countryName} />
+        </div>
+        <div className="home__layoutRight">
+          <LatestNews/>
+        </div>
+      </div>
     </div>
   );
 }
