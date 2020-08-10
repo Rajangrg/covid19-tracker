@@ -1,19 +1,38 @@
-import React from "react";
-import { Dropdown, Container } from "semantic-ui-react";
-import './SearchCountry.css'
+import React, { useEffect, useState } from "react";
+import { Dropdown, Container, Dimmer, Loader } from "semantic-ui-react";
+import "./SearchCountry.css";
+import { getCountriesInfoAPI } from "../../service/disease_shAPI";
 
+function SearchCountry({ searchCountry }) {
+  const [countries, setCountries] = useState([]);
 
-function SearchCountry() {
+  useEffect(() => {
+    const getcountryBasicInfo = async () => {
+      setCountries(await getCountriesInfoAPI());
+    };
+    getcountryBasicInfo();
+  }, []);
+
+  if (!countries) {
+    return (
+      <Dimmer active inverted>
+        <Loader inverted content="Loading" />
+      </Dimmer>
+    );
+  }
+
   return (
-  <Container className="searchCountry__container"  >
-    <Dropdown
+    <Container className="searchCountry__container" text>
+      <Dropdown
+        onChange={searchCountry}
         placeholder="Search Country..."
         fluid
         search
         selection
-        options="country name and imagedropdown"
+        options={countries}
+        value={countries.value}
       />
-  </Container> 
+    </Container>
   );
 }
 
