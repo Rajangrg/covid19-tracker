@@ -5,7 +5,7 @@ import IndividualCard from "./IndividualCard/IndividualCard";
 function HeadingCard({countries}) {
   return (
     <div className="headingCard">
-      <Container>
+      <Container >
         <IndividualCard data={countries}></IndividualCard>
       </Container>
     </div>

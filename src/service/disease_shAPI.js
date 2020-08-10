@@ -61,5 +61,6 @@ export const getCountryInfoAPI = async (countryName) => {
     .catch((error) => {
       console.error(error);
     });
+    //console.log(response.countryInfo.lat)
   return response;
 };
