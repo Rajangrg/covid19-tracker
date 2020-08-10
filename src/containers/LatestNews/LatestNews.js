@@ -4,6 +4,7 @@ import { Grid, Image,Card, Icon } from 'semantic-ui-react'
 function LatestNews() {
     return (
         <div>
+        <h1>Latest NEws</h1>
                 <Grid columns={1} padded>
       <Grid.Column>
       <Card

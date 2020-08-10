@@ -3,11 +3,12 @@ import axios from "axios";
 export const getAllCountriesAPI = async () => {
   const response = await axios
     .get("https://disease.sh/v3/covid-19/all")
-    .then(({ data: { updated, cases, deaths, recovered } }) => ({
+    .then(({ data: { updated, cases, deaths, recovered, active } }) => ({
       updated,
       cases,
       deaths,
       recovered,
+      active
     }))
     .catch((error) => {
       console.error(error);
@@ -61,6 +62,6 @@ export const getCountryInfoAPI = async (countryName) => {
     .catch((error) => {
       console.error(error);
     });
-    //console.log(response.countryInfo.lat)
+  //console.log(response.countryInfo.lat)
   return response;
 };
