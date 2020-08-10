@@ -25,7 +25,7 @@ function SearchCountry({ searchCountry, undo, name }) {
     <Container className="searchCountry__container" text>
       <Dropdown
         onChange={searchCountry}
-        placeholder="Search Country..."
+        placeholder="Search or select country..."
         fluid
         search
         selection

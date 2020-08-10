@@ -32,7 +32,7 @@ function IndividualCard({ data: { cases, deaths, recovered, updated } }) {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            updated: {new Date(updated).toDateString()}
+            Updated on: {new Date(updated).toDateString()}
           </Card.Content>
         </Card>
       </Grid.Column>
@@ -53,7 +53,7 @@ function IndividualCard({ data: { cases, deaths, recovered, updated } }) {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            Updated: {new Date(updated).toDateString()}
+            Updated on: {new Date(updated).toDateString()}
           </Card.Content>
         </Card>
       </Grid.Column>
@@ -74,7 +74,7 @@ function IndividualCard({ data: { cases, deaths, recovered, updated } }) {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            Updated: {new Date(updated).toDateString()}
+            Updated on: {new Date(updated).toDateString()}
           </Card.Content>
         </Card>
       </Grid.Column>
