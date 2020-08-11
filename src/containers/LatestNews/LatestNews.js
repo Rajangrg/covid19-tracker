@@ -19,7 +19,7 @@ function LatestNews() {
   
     <h1 className="latestNews__title">Latest News</h1>
       <Grid columns={2} padded  stackable>
-        {latestNews.map((news, index) => {
+        {latestNews && latestNews.map((news, index) => {
           return (
             <Grid.Column key={index} className="latestNews__grid">
               <NewsCard data={news}/>
