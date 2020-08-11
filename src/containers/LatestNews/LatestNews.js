@@ -18,7 +18,7 @@ function LatestNews() {
     <div className="latestNews">
   
     <h1 className="latestNews__title">Latest News</h1>
-      <Grid columns={2} padded doubling>
+      <Grid columns={2} padded  stackable>
         {latestNews.map((news, index) => {
           return (
             <Grid.Column key={index} className="latestNews__grid">

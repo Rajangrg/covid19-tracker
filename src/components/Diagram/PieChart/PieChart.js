@@ -4,7 +4,7 @@ import { Container } from "semantic-ui-react";
 import "./PieChart.css";
 
 function PieChart({ data: { cases, deaths, recovered, active }, name }) {
- console.log(active)
+//  console.log(active)
   const PieChart = cases ?  (
     <Pie 
      data={{
@@ -29,6 +29,7 @@ function PieChart({ data: { cases, deaths, recovered, active }, name }) {
      options={{
         legend: { display: true },
         title: { display: true, text: `Current Covid-19 state in ${name}` },
+       
       }}
     >
     </Pie>

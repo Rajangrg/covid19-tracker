@@ -9,7 +9,7 @@ import {
 } from "../../service/disease_shAPI";
 import PieChart from "../../components/Diagram/PieChart/PieChart";
 import LatestNews from "../LatestNews/LatestNews";
-import { Grid } from "semantic-ui-react";
+import { Grid, Responsive } from "semantic-ui-react";
 
 function Home() {
   const [countries, setCountries] = useState({});
@@ -47,7 +47,9 @@ function Home() {
       <Grid columns={2} padded doubling>
         <Grid.Column >
           <HeadingCard countries={countries} />
+          <Responsive  minWidth={450}>
           <PieChart data={countries} name={countryName} />
+          </Responsive>
         </Grid.Column>
         <Grid.Column >
           <LatestNews />
