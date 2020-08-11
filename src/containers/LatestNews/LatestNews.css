@@ -1,0 +1,14 @@
+.latestNews{
+    background-color: #FEFEF8;
+    margin-right: 16px;
+    margin-bottom: 19px;
+    
+}
+.latestNews__title{
+    text-align: center;
+    padding-top: 6px;
+    font-weight: bold !important;
+}
+.latestNews__grid{
+    overflow: auto !important
+}

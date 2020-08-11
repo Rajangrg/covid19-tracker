@@ -1,32 +1,33 @@
-import React from 'react'
-import { Grid, Image,Card, Icon } from 'semantic-ui-react'
+import React, { useEffect, useState } from "react";
+import { Grid } from "semantic-ui-react";
+import "./LatestNews.css";
+import { getTopHeadlineAPI } from "../../service/disease_shAPI";
+import NewsCard from "../../components/NewsCard/NewsCard";
 
 function LatestNews() {
-    return (
-        <div>
-        <h1>Latest NEws</h1>
-                <Grid columns={1} padded>
-      <Grid.Column>
-      <Card
-    image='https://react.semantic-ui.com/images/avatar/large/elliot.jpg'
-    header='Elliot Baker'
-    meta='Friend'
-    description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
-    
-  />
-      </Grid.Column>
-      <Grid.Column>
-      <Card
-    image='https://react.semantic-ui.com/images/avatar/large/elliot.jpg'
-    header='Elliot Baker'
-    meta='Friend'
-    description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
-    
-  />
-      </Grid.Column>
-    </Grid>
-        </div>
-    )
+  const [latestNews, setLatestNews] = useState([]);
+
+  useEffect(() => {
+    const getTopHeadLineNews = async () => {
+      setLatestNews(await getTopHeadlineAPI());
+    };
+    getTopHeadLineNews();
+  }, [setLatestNews]);
+
+  return (
+    <div className="latestNews">
+      <h1 className="latestNews__title">Latest News</h1>
+      <Grid columns={1} padded doubling>
+        {latestNews.map((news, index) => {
+          return (
+            <Grid.Column key={index} className="latestNews__grid">
+              <NewsCard data={news}/>
+            </Grid.Column>
+          );
+        })}
+      </Grid>
+    </div>
+  );
 }
 
-export default LatestNews
+export default LatestNews;

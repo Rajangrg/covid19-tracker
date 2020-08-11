@@ -8,7 +8,7 @@ export const getAllCountriesAPI = async () => {
       cases,
       deaths,
       recovered,
-      active
+      active,
     }))
     .catch((error) => {
       console.error(error);
@@ -63,5 +63,26 @@ export const getCountryInfoAPI = async (countryName) => {
       console.error(error);
     });
   //console.log(response.countryInfo.lat)
+  return response;
+};
+
+export const getTopHeadlineAPI = async () => {
+  const response = axios
+    .get(
+      `https://newsapi.org/v2/top-headlines?q=covid&apiKey=9a70bf20717142c58adbcb8f2f1edfdc&pageSize=3`
+    )
+    .then(({ data: { articles } }) =>
+      articles.map((article) => ({
+        author: article.author,
+        description: article.description,
+        title: article.title,
+        publishedAt: article.publishedAt,
+        url: article.url,
+      }))
+    )
+    .catch((error) => {
+      console.log(error);
+    });
+
   return response;
 };
