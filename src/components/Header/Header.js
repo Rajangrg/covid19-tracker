@@ -11,16 +11,16 @@ function Header() {
             alt="covid19-logo"
           />
         </Menu.Item>
-        <Menu.Item as="a" className="text" href="">
+        <Menu.Item as="a" className="text" href="https://github.com/Rajangrg/covid19-tracker">
           Source Code
         </Menu.Item>
-        <Menu.Item as="a" className="text" href="https://jobs.github.com/api">
+        <Menu.Item as="a" className="text" href="https://disease.sh/docs/">
           API Details
         </Menu.Item>
         <Menu.Item
           as="a"
           className="text"
-          href="https://corona.lmao.ninja/docs/"
+          href="https://github.com/Rajangrg/covid19-tracker/blob/master/LICENSE"
         >
           MIT License
         </Menu.Item>
