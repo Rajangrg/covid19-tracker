@@ -9,6 +9,7 @@ import {
 } from "../../service/disease_shAPI";
 import PieChart from "../../components/Diagram/PieChart/PieChart";
 import LatestNews from "../LatestNews/LatestNews";
+import { Grid } from "semantic-ui-react";
 
 function Home() {
   const [countries, setCountries] = useState({});
@@ -33,7 +34,6 @@ function Home() {
     setCountryName("worldwide");
     setCountries(await getAllCountriesAPI());
   };
-  //console.log(countries)
 
   return (
     <div className="home">
@@ -44,15 +44,15 @@ function Home() {
         undo={undoInfo}
         name={countryName}
       />
-      <div className="home__layout">
-        <div className="home__layoutLeft">
+      <Grid columns={2} padded doubling>
+        <Grid.Column >
           <HeadingCard countries={countries} />
           <PieChart data={countries} name={countryName} />
-        </div>
-        <div className="home__layoutRight">
-          <LatestNews/>
-        </div>
-      </div>
+        </Grid.Column>
+        <Grid.Column >
+          <LatestNews />
+        </Grid.Column>
+      </Grid>
     </div>
   );
 }

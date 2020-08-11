@@ -10,5 +10,5 @@
     font-weight: bold !important;
 }
 .latestNews__grid{
-    overflow: auto !important
+   padding-left: 26px !important ;
 }

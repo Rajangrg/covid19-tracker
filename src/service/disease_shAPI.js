@@ -69,11 +69,10 @@ export const getCountryInfoAPI = async (countryName) => {
 export const getTopHeadlineAPI = async () => {
   const response = axios
     .get(
-      `https://newsapi.org/v2/top-headlines?q=covid&apiKey=9a70bf20717142c58adbcb8f2f1edfdc&pageSize=3`
+      `https://newsapi.org/v2/top-headlines?q=covid&apiKey=9a70bf20717142c58adbcb8f2f1edfdc&pageSize=6`
     )
     .then(({ data: { articles } }) =>
       articles.map((article) => ({
-        author: article.author,
         description: article.description,
         title: article.title,
         publishedAt: article.publishedAt,

@@ -16,8 +16,9 @@ function LatestNews() {
 
   return (
     <div className="latestNews">
-      <h1 className="latestNews__title">Latest News</h1>
-      <Grid columns={1} padded doubling>
+  
+    <h1 className="latestNews__title">Latest News</h1>
+      <Grid columns={2} padded doubling>
         {latestNews.map((news, index) => {
           return (
             <Grid.Column key={index} className="latestNews__grid">
@@ -26,6 +27,8 @@ function LatestNews() {
           );
         })}
       </Grid>
+  
+   
     </div>
   );
 }

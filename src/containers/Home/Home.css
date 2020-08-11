@@ -4,14 +4,3 @@
     font-size: 6rem
 }
 
-.home__layout{
-    display: flex;
-}
-
-.home__layoutLeft{
-    flex: 1
-}
-
-.home__layoutRight{
-    flex: 0
-}
