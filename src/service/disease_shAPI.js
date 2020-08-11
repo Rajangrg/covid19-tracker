@@ -69,7 +69,7 @@ export const getCountryInfoAPI = async (countryName) => {
 export const getTopHeadlineAPI = async () => {
   const response = axios
     .get(
-      `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?q=covid&apiKey=9a70bf20717142c58adbcb8f2f1edfdc&pageSize=6`
+       `https://gnews.io/api/v3/search?q=covid&token=3e7b2626610d316dc8d5c09416d49c84&max=6`
     )
     .then(({ data: { articles } }) =>
       articles.map((article) => ({
