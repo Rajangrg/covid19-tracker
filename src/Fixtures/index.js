@@ -1,5 +1,3 @@
-import { Flag } from "semantic-ui-react";
-
 //set of sample objects for testing
 export const getWorldwideInfo = {
   cases: 500,
