@@ -75,7 +75,8 @@ export const getTopHeadlineAPI = async () => {
       articles.map((article) => ({
         description: article.description,
         title: article.title,
-        publishedAt: article.publishedAt,
+        source: article.source.name,
+        websiteUrl: article.source.url,
         url: article.url,
       }))
     )
