@@ -3,13 +3,29 @@ import axios from "axios";
 export const getAllCountriesAPI = async () => {
   const response = await axios
     .get("https://disease.sh/v3/covid-19/all")
-    .then(({ data: { updated, cases, deaths, recovered, active } }) => ({
-      updated,
-      cases,
-      deaths,
-      recovered,
-      active,
-    }))
+    .then(
+      ({
+        data: {
+          updated,
+          cases,
+          deaths,
+          recovered,
+          active,
+          todayCases,
+          todayDeaths,
+          todayRecovered,
+        },
+      }) => ({
+        updated,
+        cases,
+        deaths,
+        recovered,
+        active,
+        todayCases,
+        todayDeaths,
+        todayRecovered,
+      })
+    )
     .catch((error) => {
       console.error(error);
     });
@@ -48,6 +64,9 @@ export const getCountryInfoAPI = async (countryName) => {
           recovered,
           countryInfo,
           active,
+          todayCases,
+          todayDeaths,
+          todayRecovered,
         },
       }) => ({
         updated,
@@ -57,6 +76,9 @@ export const getCountryInfoAPI = async (countryName) => {
         recovered,
         countryInfo,
         active,
+        todayCases,
+        todayDeaths,
+        todayRecovered,
       })
     )
     .catch((error) => {
@@ -69,7 +91,7 @@ export const getCountryInfoAPI = async (countryName) => {
 export const getTopHeadlineAPI = async () => {
   const response = axios
     .get(
-       `https://gnews.io/api/v3/search?q=covid&token=3e7b2626610d316dc8d5c09416d49c84&max=6`
+      `https://gnews.io/api/v3/search?q=covid&token=3e7b2626610d316dc8d5c09416d49c84&max=6`
     )
     .then(({ data: { articles } }) =>
       articles.map((article) => ({

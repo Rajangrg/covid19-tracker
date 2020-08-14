@@ -3,14 +3,14 @@ import {  Pie } from "react-chartjs-2";
 import { Container } from "semantic-ui-react";
 import "./PieChart.css";
 
-function PieChart({ data: { cases, deaths, recovered, active }, name }) {
+function PieChart({ data: { cases, deaths, recovered,  }, name }) {
 //  console.log(active)
   const PieChart = cases ?  (
     <Pie
      data={{
-      labels: ["Infected", "Recovered", "Deaths", "Active"],
+      labels: ["Infected", "Recovered", "Deaths",],
       datasets: [{
-      data: [cases, recovered, deaths, active],
+      data: [cases, recovered, deaths],
       backgroundColor: [
       '#E58B8B',
       '#5EABA1',

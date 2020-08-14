@@ -18,7 +18,7 @@ function IndividualCard({ data: { cases, deaths, recovered, updated } }) {
       <Grid.Column stretched>
         <Card className="individualCard__card">
           <Card.Content>
-            <Card.Header className="individualCard__header">
+            <Card.Header className="individualCard__header" >
               Total Cases
             </Card.Header>
             <Card.Description>
